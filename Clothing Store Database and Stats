@@ -1,0 +1,23 @@
+--Create clothing store database
+
+CREATE TABLE store (id integer primary key, name text, adult_child text, price integer, items_sold integer, in_stock integer);
+
+INSERT INTO store VALUES (1, 'Tshirts', 'adult', 20, 40, 50);
+INSERT INTO store VALUES (2, 'pants', 'adult', 30, 15, 45);
+INSERT INTO store VALUES (3, 'socks', 'adult', 15, 22, 25);
+INSERT INTO store VALUES (4, 'underwear', 'adult', 20, 8, 20);
+INSERT INTO store VALUES (5, 'Tshirts', 'child', 10, 42, 70);
+INSERT INTO store VALUES (6, 'pants', 'child', 15, 13, 30);
+INSERT INTO store VALUES (7, 'sweaters', 'adult', 25, 20, 50);
+INSERT INTO store VALUES (8, 'sweaters', 'child', 15, 30, 50);
+INSERT INTO store VALUES (9, 'jackets', 'adult', 35, 10, 20);
+INSERT INTO store VALUES (10, 'jackets', 'child', 25, 15, 25);
+
+--how many items have we sold from inventory? 
+SELECT * from store;
+SELECT SUM(items_sold) from store;
+SELECT SUM(in_stock) from store;
+
+--display what the most popular items are
+SELECT name, items_sold, adult_child from store
+order by items_sold desc;
